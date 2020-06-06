@@ -1,0 +1,387 @@
+@media only screen and (max-width: 1350px) {
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+/*---------------------------------------header and index------------------------------------------*/
+.navbar-nav > li{ margin-left:3px;}
+.navbar-default .navbar-nav > li > a{ font-size:10px;     padding: 10px 10px 10px 10px;}
+a.sign-inbut{ padding:4px 12px; font-size:10px;}
+/*---------------------------------------header and index------------------------------------------*/
+.fullnavtab li{ width:100%;}
+.accountbitconpart span{ margin-left:0;}
+
+.nail-right{ width:30%; position:inherit!important; float:left; top:0px!important; left:0!important;}
+.some-left{ width:70%;}
+.more-less{ right:-15px; top:5px;}
+.banner-text{ top:130px; width:100%;}
+.leftbannertext{ width:100%;}
+/* .scrollspy_menu .navbar-brand{ width:20%;} */
+.more-less{ right:9px;}
+.innerblogtab li{ width:29%;}
+.rightcomp-logpart{ width:46%;}
+.rightcapchapart {
+    float: none;
+    overflow: hidden;
+    width: auto;
+}
+
+    .custom-container{
+        max-width: 100%;
+    }
+
+    .socialprt ul{
+        display: flex;
+    }
+    .socialprt ul li a{
+        padding: 0 10px;
+    }
+
+    .complogoprt ul{
+        flex-wrap: wrap;
+    }
+    .maninto ul{
+        flex-wrap: wrap;
+    }
+    .prtnerlogoprt ul{
+        flex-wrap: wrap;
+    }
+    .footercont ul{
+        flex-wrap: wrap;
+    }
+
+    .postbutton{
+      font-size: 12px;
+        padding: 2px 7px;
+        margin-top: 22px;
+    }
+
+    .footercont p{
+        text-align: center;
+    }
+
+    .innerListingbody ul{
+        flex-wrap: wrap;
+        
+    }
+    
+}
+
+
+@media only screen and (max-width: 991px) {
+
+/*---------------------------------------header and index------------------------------------------*/
+.footercont{
+    flex-direction: column;
+}
+
+/*---------------------------------------header and index------------------------------------------*/
+.heading{
+    font-size: 14px;
+    width: auto;
+}
+.fullnavtablog li a{
+    padding: 7px 11px;
+    font-size: 11px;
+}
+
+.footercont ul{
+    justify-content: center;
+}
+.blogsection .imgprt img{
+    height: auto;
+}
+.adprt img{
+    height: auto;
+}
+
+.row .col-md-6, .col-md-9, .col-md-3 {
+    margin-top:25px;
+}
+
+.innerListingbody ul li{
+    width: 48%;
+}
+
+.topdetailintoprt{
+    flex-wrap: wrap;
+}
+
+.gettouchprt{
+    margin-top: 20px;
+}
+
+.rightDetailcont h2{
+    font-size: 20px;
+}
+
+
+
+}
+
+@media only screen and (max-width: 767px) {
+
+/*---------------------------------------header and index------------------------------------------*/
+.navbar-header .container{ padding:0;}
+.navbar-toggle{ margin-right:6px;}
+.navbar{ margin-bottom:0;}
+.navbar-fixed-bottom, .navbar-fixed-top{ position:inherit;}
+
+.navbar-collapse{ float:left; width:100%; padding:0; margin:0!important; background:#000; position: absolute;
+    left: 0;
+    z-index: 9;
+    top: 56px; max-height: 380px!important;}
+.navbar-nav > li{ margin-left:0; padding:0 10px; border-bottom:1px solid #fff;}
+.navbar-default .navbar-nav > li > a{ color:#fff; padding:14px 0;}
+.navbar-nav > li > a::after{ display:none;}
+.navbar-default .navbar-nav > li > a.active{ color:#ff386e;}
+.navbar-nav{ margin:0;}
+.navbar-right{ margin-left:0;}
+.navbar-brand{ padding:15px;}
+.dropdown-menu{ min-width:100%;}
+.dropdown-menu > li > .dropdown-menu{ left:0; top:31px;}
+.subdropdown{ min-width:100%!important;}
+
+.innerListingbody ul li{
+    margin: 0;
+}
+/*---------------------------------------header and index------------------------------------------*/
+.banner-part{ margin-top:0;}
+.uprsecurepart{ margin-top:20px;}
+.footermid{ margin-top:20px;}
+.navbar-header{ height:inherit}
+/* .buttonrightpart{ display:none;} */
+.navbar-default .navbar-nav > li > a{ font-size:14px;}
+.fullnavtab li{ width:inherit;}
+.accountbitconpart span{ margin-left:10px;}
+.wrap-box{ margin:20px 0;}
+.nail-right{ width:100%; position:inherit!important; float:left; top:0px!important; left:0!important;}
+.some-left{ width:100%; float:left; margin-top:20px;}
+
+.top-header{ background:#122067; padding: 5px 0;}
+.banner-text{ top:13px; width:100%;}
+.leftbannertext{ width:100%;}
+/* .scrollspy_menu .navbar-brand{ width:auto;} */
+
+.leftpaypalpart{ width:100%;}
+.rightpaypalpart{ width:100%;}
+.innerblogtab li{ width:100%;}
+.leftcomp-logpart{ width:100%;}
+.rightcomp-logpart{ width:100%;}
+
+.fulltop{
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.postbutton{
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+    font-size: 12px;
+    padding: 2px 7px;
+}
+.navbar-header{
+    position: relative;
+}
+.banner{
+    padding-top: 0;
+}
+
+.navbar-brand{
+    width: 20%;
+}
+
+.banner{
+     height: auto;
+}
+.innerbannertxt {
+    padding-top: 0;
+}
+.innerbannertxt h3 {
+    
+    font-size: 21px;
+    
+}
+.innerbannertxt h1{
+    font-size: 35px;
+    line-height: 38px;
+}
+.innerbannertxt h1 span{
+    font-size: 32px;
+}
+.projectList ul{
+    flex-direction: column;
+}
+.projectList ul li{
+    width: 100%;
+    border-bottom: 5px solid #fff;
+}
+
+.row .col-md-6, .col-md-9, .col-md-3 {
+    margin-top: 15px;
+}
+
+.twoprtimg{
+    flex-direction: column;
+}
+.leftimgsec{
+    width: 100%;
+}
+.rightimgsec{
+    width: 100%;
+}
+.rightimgsec{
+    padding-left: 0;
+}
+.rightimgsec ul li{
+    background: none;
+    padding-left: 0;
+}
+
+
+.packageiconprt ul li{
+    width:100%;
+}
+
+.searchprt{
+    flex-direction: column;
+}
+.innersearchpanel{
+    flex-direction: column;
+    width: 100%;
+}
+.innersearchpanel .form-group{
+    width:100%;
+}
+.innersearchpanel button{
+    width: 100%;
+}
+
+
+.profimg, .profinto, .socialinto, .viewsprt{
+    margin-top: 15px;
+}
+
+.innercontDetail{
+    flex-direction: column;
+    justify-content: center;
+}
+.rightDetailcont{
+    width: 100%;
+    height: calc(100% - 150px);
+    margin-top: 20px;
+    display: block;
+}
+.leftDetailimg{
+    width: 130px;
+    height: 130px;
+}
+.detailbannerprt {
+    height: 430px;
+}
+
+
+
+}
+@media only screen and (max-width: 660px) {
+
+/*-----------------------------------------inner-page start----------------------------------------------*/
+
+/*------------------------------------------inner-page end-----------------------------------------------*/
+}
+@media only screen and (max-width: 599px) {
+.mainloginpart{ width:100%;}
+
+.fulltop{
+   flex-direction: column;
+}
+
+.loginbuttonprt{
+    display: flex;
+    justify-content: center;
+}
+
+.socialprt ul{
+    justify-content: center;
+}
+
+.searchpanel{
+    flex-direction: column;
+}
+.searchpanel input[type="text"]{
+    width:100%;
+}
+.searchpanel button{
+    width: 100%;
+}
+
+.complogoprt ul li{
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.heading {
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    position: inherit;
+}
+.tabpanel .nav-tabs>li{
+    width:100%;
+    border-radius: 0;
+    margin-top: 10px;
+}
+
+.maninto ul li{
+    width:100%;
+}
+
+.topheadingpanel{
+    position: inherit;
+}
+
+
+.prtnerlogoprt ul li{
+    width:100%;
+}
+
+.innerListingbody ul{
+    flex-direction: column;
+    
+}
+
+.innerListingbody ul li{
+    width: 100%;
+}
+
+
+}
+@media only screen and (max-width: 554px){
+
+}
+
+
+@media only screen and (max-width: 480px){
+
+/*---------------------------------------header and index------------------------------------------*/
+.navbar-brand{
+    width: 40%;
+}
+.fullnavtab li{ width:100%;}
+.banner-text h2{ font-size:20px;}
+.banner-text p{ font-size:11px;}
+
+/*---------------------------------------header and index------------------------------------------*/
+
+
+}
+@media only screen and (max-width: 350px) {
+
+
+}

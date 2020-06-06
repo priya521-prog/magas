@@ -1,0 +1,455 @@
+
+	<footer>
+
+		<div class="upfooter">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-sm-3 footermid">
+						<h3>In-House Services</h3>
+						<ul>
+							<li>
+								<a href="pages/aerospace-aviation">Aerospace & Aviation</a>
+							</li>
+							<li>
+								<a href="pages/agriculture">Agriculture</a>
+							</li>
+							<li>
+								<a href="pages/banking">Banking</a>
+							</li>
+							<li>
+								<a href="pages/construction">Construction</a>
+							</li>
+							<li>
+								<a href="pages/defence">Defence</a>
+							</li>
+							<li>
+								<a href="pages/education">Education</a>
+							</li>
+							<li>
+								<a href="pages/electronics-computers">Electronics & Computers </a>
+							</li>
+							<li>
+								<a href="pages/energy">Energy</a>
+							</li>
+							<li>
+								<a href="pages/engineering">Engineering</a>
+							</li>
+							<li>
+								<a href="pages/entertainment">Entertaintment</a>
+							</li>
+							<li>
+								<a href="pages/finance">Finance</a>
+							</li>
+							<li>
+								<a href="pages/food">Food</a>
+							</li>
+							
+							<li>
+								<a href="pages/general">General</a>
+							</li>
+							
+							<li>
+								<a href="pages/health-care">Health Care</a>
+							</li>
+							
+							<li>
+								<a href="pages/hospitality">Hospitality</a>
+							</li>
+							<li>
+								<a href="pages/insurance">Insurance</a>
+							</li>
+							<li>
+								<a href="pages/legal">Legal</a>
+							</li>
+							<li>
+								<a href="pages/logictics-distribution">Logictics & Distribution</a>
+							</li>
+							<li>
+								<a href="pages/manufacturing">Manufacturing</a>
+							</li>
+							<li>
+								<a href="pages/media-advertising">Media & Advertising</a>
+							</li>
+							<li>
+								<a href="pages/mining">Mining</a>
+							</li>
+							<li>
+								<a href="pages/music">Music</a>
+							</li>
+							<li>
+								<a href="pages/phrmaceuticals">Phrmaceuticals</a>
+							</li>
+							<li>
+								<a href="pages/real-estate">Real Estate</a>
+							</li>
+							<li>
+								<a href="pages/recruitment">Recruitment</a>
+							</li>
+							<li>
+								<a href="pages/retail">Retail</a>
+							</li>
+							
+							<li>
+								<a href="pages/technology-it">Technology & IT</a>
+							</li>
+							
+							<li>
+								<a href="pages/telecommunication">Telecommunication</a>
+							</li>
+							
+							<li>
+								<a href="pages/trading">Trading</a>
+							</li>
+							
+							<li>
+								<a href="pages/transportation">Transportation</a>
+							</li>
+							
+							<li>
+								<a href="pages/travel-tours">Travel & Tours</a>
+							</li>
+								
+
+
+						
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-sm-3 footermid">
+						<h3>Investment Services</h3>
+						<ul>
+							<li>
+								<a href="pages/accounting-book-keeping">Accounting & Book Keeping</a>
+							</li>
+							<li>
+								<a href="pages/actor">Actor</a>
+							</li>
+							<li>
+								<a href="adminstration">Adminstration</a>
+							</li>
+							<li>
+								<a href="pages/analysts">Analysts</a>
+							</li>
+							<li>
+								<a href="pages/architects">Architects</a>
+							</li>
+							<li>
+								<a href="archivists-curator">Archivists & Curator</a>
+							</li>
+
+							<li>
+								<a href="pages/artist">Artists</a>
+							</li>
+							<li>
+								<a href="pages/auditing-assurance">Auditing & Assurance</a>
+							</li>
+							<li>
+								<a href="pages/authors-writer">Authors & Writer</a>
+							</li>
+							
+							<li>
+								<a href="cartographers-surveyor">Cartographers and Surveyor</a>
+							</li>
+							
+							<li>
+								<a href="consultant">Consultant</a>
+							</li>
+
+							<li>
+								<a href="dancers-choregrapher">Dancers & Choreographer</a>
+							</li>
+							<li>
+								<a href="interior-decorator">Interior Decorator</a>
+							</li>
+							<li>
+								<a href="designer">Designer</a>
+							</li>
+							
+							<li>
+								<a href="developer">Developer</a>
+							</li>
+							
+							<li>
+								<a href="economist">Economist</a>
+							</li>
+							
+							
+							<li>
+								<a href="govermental">Govermental</a>
+							</li>
+							
+							
+							<li>
+								<a href="it-specialist">IT Specialist</a>
+							</li>
+							
+							
+							<li>
+								<a href="journalist">Journalist</a>
+							</li>
+							
+							
+							<li>
+								<a href="layer">Lawyer</a>
+							</li>
+							
+							
+							<li>
+								<a href="medical-practioner">Medical Practioner</a>
+							</li>
+							
+							
+							<li>
+								<a href="#">Musicians,Singers & Composers</a>
+							</li>
+							
+							
+							
+							
+							<li>
+								<a href="pharmacist">Pharmacist</a>
+							</li>
+							
+							
+							
+							<li>
+								<a href="physio-therapists">Physio Therapists</a>
+							</li>
+							
+							
+							
+							<li>
+								<a href="public-relation-officer">Public relation Officer</a>
+							</li>
+							
+							<li>
+								<a href="repairs-maintenance">Repairs & Maintenance</a>
+							</li>
+							
+							<li>
+								<a href="tax-expert">Tax Expert</a>
+							</li>
+							
+							<li>
+								<a href="teacher">Teacher</a>
+							</li>
+							
+							<li>
+								<a href="therapist">Therapist</a>
+							</li>
+							
+							<li>
+								<a href="trainer">Trainer</a>
+							</li>
+							
+							
+							<li>
+								<a href="translation">Translation</a>
+							</li>
+							
+							
+							<li>
+								<a href="translators-interpreters">Translators & Interpreters</a>
+							</li>
+							
+							
+							<li>
+								<a href="travel-agent">Travel Agent</a>
+							</li>
+							
+							
+							<li>
+								<a href="visual-artists">Visual Artists</a>
+							</li>
+							
+							
+							<li>
+								<a href="web-multimedia">Web & Multimedia</a>
+							</li>
+						</ul>
+
+						
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-sm-3 footermid">
+						<h3>Specialised Services</h3>
+						<ul>
+							<li>
+								<a href="#">Crisis Management</a>
+							</li>
+							<li>
+								<a href="#">Business Liquidation</a>
+							</li>
+							<li>
+								<a href="#">Content Development</a>
+							</li>
+							<li>
+								<a href="#">KYC & Credit Check</a>
+							</li>
+							<li>
+								<a href="#">Expert Copywriting</a>
+							</li>
+							<li>
+								<a href="#">Business Setup</a>
+							</li>
+							<li>
+								<a href="#">Intellectual Property</a>
+							</li>
+							<li>
+								<a href="#">Manpower Supply</a>
+							</li>
+							<li>
+								<a href="#">Multilingual Translation</a>
+							</li>
+							<li>
+								<a href="#">PRO Services</a>
+							</li>
+							<li>
+								<a href="#">SEO and SEMs</a>
+							</li>
+						</ul>
+
+
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-sm-3 footermid">
+						<h3>Sectors</h3>
+						<ul>
+							<li>
+								<a href="#">Education</a>
+							</li>
+							<li>
+								<a href="#">Healthcare</a>
+							</li>
+							<li>
+								<a href="#">Media</a>
+							</li>
+							<li>
+								<a href="#">Oil & Gas</a>
+							</li>
+							<li>
+								<a href="#">Real Estate</a>
+							</li>
+							<li>
+								<a href="#">Trading</a>
+							</li>
+							<li>
+								<a href="#">Travel & Tourism</a>
+							</li>
+						</ul>
+
+						<div class="clearfix"></div>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+
+		<div class="lowerfooter">
+			<div class="container">
+				<div class="footercont">
+					<ul class="footerLink">
+						<li>
+							<a>
+								ABOUT US
+							</a>
+						</li>
+						<li>
+							<a>
+								DISCLAIMER
+							</a>
+						</li>
+						<li>
+							<a>
+								DOWNLOADS
+							</a>
+						</li>
+						<li>
+							<a>
+								TERMS
+							</a>
+						</li>
+						<li>
+							<a>
+								CONTACT
+							</a>
+						</li>
+
+					</ul>
+
+					<ul class="footersocial">
+						<li>
+							<a>
+								<i class="fa fa-linkedin"></i>
+							</a>
+						</li>
+						<li>
+							<a>
+								<i class="fa fa-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a>
+								<i class="fa fa-instagram"></i>
+							</a>
+						</li>
+						<li>
+							<a>
+								<i class="fa fa-facebook"></i>
+							</a>
+						</li>
+
+					</ul>
+
+					<p>© 2019 Magas International. All Rights Reserved. </p>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+<div id="loadingOverlay" style="display: none;">
+    <div class="circleLoader"></div>
+    <p>@lang('app.loading')...</p>
+</div>
+
+
+<script src="{{ asset('assets/js/vendor/jquery-1.11.2.min.js') }}"></script>
+<script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/toastr/toastr.min.js') }}"></script>
+<script src="{{ asset('assets/select2-3.5.3/select2.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/nprogress/nprogress.js') }}"></script>
+<script type="text/javascript">
+    NProgress.start();
+    NProgress.done();
+</script>
+<!-- Conditional page load script -->
+@if(request()->segment(1) === 'dashboard')
+    <script src="{{ asset('assets/plugins/metisMenu/dist/metisMenu.min.js') }}"></script>
+    <script>
+        $(function() {
+            $('#side-menu').metisMenu();
+        });
+    </script>
+@endif
+<script src="{{ asset('assets/js/main.js') }}"></script>
+<script>
+    var toastr_options = {closeButton : true};
+</script>
+@yield('page-js')
+
+
+@if(get_option('additional_js'))
+    {!! get_option('additional_js') !!}
+@endif
+<script>
+    $(document).on('click', '.ghuranti', function(){
+        $('.themeqx-demo-chooser-wrap').toggleClass('open');
+    });
+</script>
+
+</body>
+</html>

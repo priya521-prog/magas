@@ -1,0 +1,10 @@
+$(window).load(function(){
+	$('.blogEntryButt').click(function(){
+		$('#blogWrapper').show(); 
+		$('#headLineContaner').hide(); 
+    });
+	$('.headlineEntryButt').click(function(){
+		$('#headLineContaner').show(); 
+		$('#blogWrapper').hide(); 
+    });
+});

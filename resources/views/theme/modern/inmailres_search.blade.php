@@ -1,0 +1,248 @@
+
+
+@extends('layout.main-front')
+@section('title') @if( ! empty($title)) {{ $title }} | @endif @parent @endsection
+
+@section('main')
+
+  	<div class="main">
+		<div class="custom-container">
+		    
+		  <!--  <div class="well" style="border: 1px solid #591546;padding-top: 6px;padding-bottom: 1px;border-radius: 17px">-->
+    <!--         <div class="modern-home-search-bar-wrap">-->
+    <!--                    <div class="search-wrapper" style="margin-top: -16px;-->
+    <!--margin-bottom: -45px;">-->
+                             <?php
+                             //$string='';
+
+
+                            //  foreach($ads as $ad){
+                            //      echo $ad;
+                            //  }
+		  // dd($ads-user_id);
+		    ?>
+		    	<div class="listingbody" style="margin-top: 10px;">
+		    	     <div class="well" style="border: 1px solid #591546;padding-top: 6px;padding-bottom: 1px;border-radius: 17px">
+                        <div class="search-wrapper">
+                            <form class="form-inline" action="{{ route('inmail_search') }}" method="get"> @csrf
+                            
+                                <div class="form-group">
+                                   
+                                    <h3>SEARCH FILTERS</h3>
+                               
+                                </div>
+                               <!--<div class="form-group">-->
+                                    <!--<input type="text"  class="form-control" id="searchTerms" name="q" value="{{ request('q') }}" placeholder="@lang('app.search___')" />-->
+                                     <!--<input type="text"  class="form-control" id="searchTerms" name="q" value="{{ request('q') }}" placeholder="Service Type" />-->
+                                     
+                                <!--</div>-->
+                                
+                                <div class="form-group">
+                                    <select class="form-control select2" name="sub_category">
+                                        <option value="">Select Industry</option>
+                                        @foreach($categories as $category)
+                                            @if($category->sub_categories->count() > 0)
+                                                <optgroup label="{{ $category->category_name }}">
+                                                    @foreach($category->sub_categories as $sub_category)
+                                                        <option value="{{ $sub_category->id }}">{{ $sub_category->category_name }}</option>
+                                                    @endforeach
+                                                </optgroup>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                                 <div class="form-group">
+                                       <div class="select">
+                                                            <select class="form-control select2" name="q" id="searchTerms">
+                                                                <option value ="">Service Type</option>
+                                                                 <option value="Accounting & Book Keeping">Accounting & Book Keeping</option>
+                                                                <option value="Actor">Actor</option>
+                                                                <option value="Administration">Administration</option>
+                                                                <option value="Advertising and Marketing">Advertising and Marketing</option>
+                                                                <option value="Accounting & Book Keeping">Accounting & Book Keeping</option>
+                                                                <option value="Actor">Actor</option>
+                                                                <option value="Administration">Administration</option>
+                                                                <option value="Analysts">Analysts</option>
+                                                                <option value="Architects">Architects</option>
+                                                                <option value="Archivists & Curator">Archivists & Curator</option>
+                                                                <option value="Artist">Artist</option>
+                                                                <option value="Auditing & Assurance">Auditing & Assurance</option>
+                                                                <option value="Authors & Writer">Authors & Writer</option>
+                                                                <option value="Cartographers and Surveyor">Cartographers and Surveyor</option>
+                                                                <option value="Consultant">Consultant</option>
+                                                                <option value="Dancers & Choreographer">Dancers & Choreographer</option>
+                                                                <option value="Interior Decorator">Interior Decorator</option>
+                                                                <option value="Designer">Designer</option>
+                                                                <option value="Designer">Developer</option>
+                                                                <option value="Economist">Economist</option>
+                                                                <option value="Governmental">Governmental</option>
+                                                                <option value="IT Specialist">IT Specialist</option>
+                                                                <option value="Lawyer">Lawyer</option>
+                                                                <option value="Medical Practitioner">Medical Practitioner</option>
+                                                                <option value="Musicians, Singers & Composers">Musicians, Singers & Composers</option>
+                                                                <option value="Pharmacist">Pharmacist</option>
+                                                                <option value="Physio Therapists">Physio Therapists</option>
+                                                                <option value="Public Relation Officer">Public Relation Officer</option>
+                                                                <option value="Repairs & Maintenance">Repairs & Maintenance</option>
+                                                                <option value="Tax Expert">Tax Expert</option>
+                                                                <option value="Teacher">Teacher</option>
+                                                                <option value="Therapist">Therapist</option>
+                                                                <option value="Trainer">Trainer</option>
+                                                                <option value="Translation">Translation</option>
+                                                                <option value="Translators & Interpreters">Translators & Interpreters</option>
+                                                                <option value="Travel Agent">Travel Agent</option>
+                                                                <option value="Visual Artists">Visual Artists</option>
+                                                                <option value="Visual Artists">Web & Multimedia</option>
+                                                                <option value="Others">Others</option>
+                                                            </select>
+                                                        </div>
+                                                        </div>
+                                                        
+                                <div class="form-group">
+                                        <select class="form-control select2" name="country">
+                                            <option value="">@lang('app.select_a_country')</option>
+                                            <option value="">Select Country</option>
+                                            <?php
+                                          //  dd($countries);
+                                            ?>
+                                            @foreach($countries as $country)
+                                            
+                                                <option value="{{ $country->id }}" >{{ $country->country_name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                     <div class="form-group">
+                                    <select class="form-control select2" id="state_select" name="state">
+                                        <option value=""> @lang('app.select_state') </option>
+                                    </select>
+                                </div>
+                                
+
+                                <button type="submit" class="btn theme-btn" style="background:#1f2152"> <i class="fa fa-search"></i> FIND</button>
+                            </form>
+                        </div>
+
+                    </div>
+		   
+@if($ads->count() <= 0)
+
+<p> No Records Found.</p>
+   @endif
+ 
+<div class="innerListingbody">
+    
+                  
+					<div class="innerheading green" style="background-color:#EA1C57!important">
+						SEARCH RESULTS
+					</div>
+					<?php
+					//dd($user_ids);
+					?>
+					  <!--<button>Message</button>-->
+					  <?php
+					  
+				// 	  foreach($ads as $ad){
+					      
+				// 	   echo $ad->title;
+				// 	   // echo $arr_id;
+					   
+				// // 	    $res=implode(' ',$arr_id);
+				// // 	  dd($res);
+				// 	  }
+					  
+					  ?>
+					  	<?php
+					  //	dd($ads);
+					  	?>
+                                 
+                                                	 
+@if($ads->count() > 0)
+					 @foreach($ads as $ad)
+					<?php echo $ad->user_id.","; 
+				// 	$res=$ad->user_id.",";
+				// 	$arr=array();
+				// 	echo $arr;
+				
+				// 	echo $res;
+					?>
+					
+				
+					 	<!--<h3><a href="{{  route('single_ad', [$ad->id, $ad->slug]) }}"><?php //echo $ad->user->name; ?></a></h3>-->
+					 	<!--<div><a href="{{  route('single_ad', [$ad->id, $ad->slug]) }}"><?php //echo $ad->title; ?></a></div>-->
+
+
+
+
+					 @endforeach
+					  <form action="{{ route('pending-comment') }}" method="post" > @csrf
+            <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                  
+                                    <!--<input type="text" class="form-control" id="name" name="name" placeholder="comments"  value=""/>-->
+                                   <textarea name="name" class="form-control" id="name"  placeholder="comments"  value="<?php ?>"><?php echo "hi"; ?></textarea>
+                                </div>
+                               
+                            </div>
+                              <input type="text" name="dataid" id="dataid" value="<?php echo "hi"; ?> "/>
+
+                            
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary pull-right" id="btnContactUs"> Submit</button>
+                            </div>
+                        </div>
+                    </form>
+					
+					 <?php
+					 // echo $arrays[0]['user_id'];
+					//  dd($arrays[0]['title'].$arrays[1]['title'].$arrays[2]['title']);
+				
+					  // dd($arrays[1]['user_id']);
+					  ?>
+					  <button data-id="<?php echo "hi"; ?>"  onclick="$('#dataid').val($(this).data('id')); $('#myModal').modal('show');" >Message</button>
+					   
+					
+   @endif
+   </div>
+				</div>
+			</div>
+</div>
+ <div class="modal fade " id="myModal" role="dialog">
+    <div class="modal-dialog ">
+      <!-- Modal content-->
+      <div class="modal-content well well-sm">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Enter Message</h3>
+          
+          
+        </div>
+        <div class="modal-body ">
+         
+
+           
+                    <form action="{{ route('pending-comment') }}" method="post" > @csrf
+            <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                  
+                                    <!--<input type="text" class="form-control" id="name" name="name" placeholder="comments"  value=""/>-->
+                                   <textarea name="name" class="form-control" id="name"  placeholder="comments"  value="<?php ?>"></textarea>
+                                </div>
+                               
+                            </div>
+                              <input type="text" name="dataid" id="dataid" value=" "/>
+
+                            
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary pull-right" id="btnContactUs"> Submit</button>
+                            </div>
+                        </div>
+                    </form>
+        </div> <!--modal body-->
+      </div>
+    </div>
+  </div> <!--modal-->
+@endsection
+
+

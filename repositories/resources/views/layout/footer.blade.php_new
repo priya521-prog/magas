@@ -1,0 +1,266 @@
+
+	<footer>
+
+		<div class="upfooter">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-sm-3 footermid">
+						<h3>In-House Services</h3>
+						<ul>
+							<li>
+								<a href="#">Accounting</a>
+							</li>
+							<li>
+								<a href="#">Advertising</a>
+							</li>
+							<li>
+								<a href="#">Auditing</a>
+							</li>
+							<li>
+								<a href="#">Brand Consultancy</a>
+							</li>
+							<li>
+								<a href="#">Business Advisory</a>
+							</li>
+							<li>
+								<a href="#">Business Plan Writing</a>
+							</li>
+							<li>
+								<a href="#">Insurance</a>
+							</li>
+							<li>
+								<a href="#">Management Consultancy</a>
+							</li>
+							<li>
+								<a href="#">Market Research</a>
+							</li>
+							<li>
+								<a href="#">IT & Technology Solutions</a>
+							</li>
+							<li>
+								<a href="#">Tax Consultancy</a>
+							</li>
+
+						
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-sm-3 footermid">
+						<h3>Investment Services</h3>
+						<ul>
+							<li>
+								<a href="#">Business Valuation</a>
+							</li>
+							<li>
+								<a href="#">Deal Sourcing</a>
+							</li>
+							<li>
+								<a href="#">Deal Structuring</a>
+							</li>
+							<li>
+								<a href="#">Deals Execution</a>
+							</li>
+							<li>
+								<a href="#">Due Diligence</a>
+							</li>
+							<li>
+								<a href="#">Joint Ventures</a>
+							</li>
+
+							<li>
+								<a href="#">Mergers & Acquisitions</a>
+							</li>
+							<li>
+								<a href="#">Sensitivity Analysis</a>
+							</li>
+							<li>
+								<a href="#">Sustainability Testing and Analysis</a>
+							</li>
+							
+						</ul>
+
+						
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-sm-3 footermid">
+						<h3>Specialised Services</h3>
+						<ul>
+							<li>
+								<a href="#">Crisis Management</a>
+							</li>
+							<li>
+								<a href="#">Business Liquidation</a>
+							</li>
+							<li>
+								<a href="#">Content Development</a>
+							</li>
+							<li>
+								<a href="#">KYC & Credit Check</a>
+							</li>
+							<li>
+								<a href="#">Expert Copywriting</a>
+							</li>
+							<li>
+								<a href="#">Business Setup</a>
+							</li>
+							<li>
+								<a href="#">Intellectual Property</a>
+							</li>
+							<li>
+								<a href="#">Manpower Supply</a>
+							</li>
+							<li>
+								<a href="#">Multilingual Translation</a>
+							</li>
+							<li>
+								<a href="#">PRO Services</a>
+							</li>
+							<li>
+								<a href="#">SEO and SEMs</a>
+							</li>
+						</ul>
+
+
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-sm-3 footermid">
+						<h3>Sectors</h3>
+						<ul>
+							<li>
+								<a href="#">Education</a>
+							</li>
+							<li>
+								<a href="#">Healthcare</a>
+							</li>
+							<li>
+								<a href="#">Media</a>
+							</li>
+							<li>
+								<a href="#">Oil & Gas</a>
+							</li>
+							<li>
+								<a href="#">Real Estate</a>
+							</li>
+							<li>
+								<a href="#">Trading</a>
+							</li>
+							<li>
+								<a href="#">Travel & Tourism</a>
+							</li>
+						</ul>
+
+						<div class="clearfix"></div>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+
+		<div class="lowerfooter">
+			<div class="container">
+				<div class="footercont">
+					<ul class="footerLink">
+						<li>
+							<a>
+								ABOUT US
+							</a>
+						</li>
+						<li>
+							<a>
+								DISCLAIMER
+							</a>
+						</li>
+						<li>
+							<a>
+								DOWNLOADS
+							</a>
+						</li>
+						<li>
+							<a>
+								TERMS
+							</a>
+						</li>
+						<li>
+							<a>
+								CONTACT
+							</a>
+						</li>
+
+					</ul>
+
+					<ul class="footersocial">
+						<li>
+							<a>
+								<i class="fa fa-linkedin"></i>
+							</a>
+						</li>
+						<li>
+							<a>
+								<i class="fa fa-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a>
+								<i class="fa fa-instagram"></i>
+							</a>
+						</li>
+						<li>
+							<a>
+								<i class="fa fa-facebook"></i>
+							</a>
+						</li>
+
+					</ul>
+
+					<p>© 2019 Magas International. All Rights Reserved. </p>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+<div id="loadingOverlay" style="display: none;">
+    <div class="circleLoader"></div>
+    <p>@lang('app.loading')...</p>
+</div>
+
+
+<script src="{{ asset('assets/js/vendor/jquery-1.11.2.min.js') }}"></script>
+<script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/toastr/toastr.min.js') }}"></script>
+<script src="{{ asset('assets/select2-3.5.3/select2.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/nprogress/nprogress.js') }}"></script>
+<script type="text/javascript">
+    NProgress.start();
+    NProgress.done();
+</script>
+<!-- Conditional page load script -->
+@if(request()->segment(1) === 'dashboard')
+    <script src="{{ asset('assets/plugins/metisMenu/dist/metisMenu.min.js') }}"></script>
+    <script>
+        $(function() {
+            $('#side-menu').metisMenu();
+        });
+    </script>
+@endif
+<script src="{{ asset('assets/js/main.js') }}"></script>
+<script>
+    var toastr_options = {closeButton : true};
+</script>
+@yield('page-js')
+
+
+@if(get_option('additional_js'))
+    {!! get_option('additional_js') !!}
+@endif
+<script>
+    $(document).on('click', '.ghuranti', function(){
+        $('.themeqx-demo-chooser-wrap').toggleClass('open');
+    });
+</script>
+
+</body>
+</html>

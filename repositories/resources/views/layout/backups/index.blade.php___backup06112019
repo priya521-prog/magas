@@ -1,0 +1,924 @@
+@extends('layout.main-front')
+
+@section('page-css')
+    <link rel="stylesheet" href="{{ asset('assets/plugins/owl.carousel/assets/owl.carousel.css') }}">
+ 
+    
+
+@endsection
+
+@section('main')
+	
+
+<div class="banner" style="padding-top: 120px">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    @php
+$sl = 0
+@endphp
+      @foreach($sliders as $slider)
+      @if($sl == 0)
+         <li data-target="#myCarousel" data-slide-to="{{$sl}}" class="active"></li>
+        @else
+         <li data-target="#myCarousel" data-slide-to="{{$sl}}" ></li>
+             @endif
+
+ @php
+$sl++
+@endphp
+       @endforeach
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+@php
+$sl = 0
+@endphp
+      @foreach($sliders as $slider)
+      @if($sl == 0)
+      
+    <div class="item active">
+        @else
+        <div class="item">
+             @endif
+      <img src="uploads/sliders/{{ $slider->media_name }}">
+      
+
+		<div class="bannertXt">
+			<div class="custom-container">
+                            <div class="innerbannertxt" style="padding-left:200px">
+					<h2>{{ $slider->caption }}</h2>
+				</div>
+
+			</div>
+		</div>
+	</div>
+ @php
+$sl ++
+@endphp
+       @endforeach
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="margin-top:320px">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next" style="margin-top:320px">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+		<!--<img src="uploads/theme/banner.jpg">-->
+		
+	</div>
+
+	<div class="main">
+		<div class="custom-container">
+                    <div class="modern-home-search-bar-wrap">
+                        <div class="search-wrapper">
+                            <form class="form-inline" action="{{ route('homelisting') }}" method="get">
+                                <div class="form-group">
+                                    <h3>Search</h3>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text"  class="form-control" id="searchTerms" name="q" value="{{ request('q') }}" placeholder="@lang('app.search___')" />
+                                </div>
+                                
+                              
+                                <div class="form-group">
+                                    <select class="form-control select2" name="sub_category">
+                                        <option value="">@lang('app.select_a_category')</option>
+                                        @foreach($top_categories as $category)
+                                            @if($category->sub_categories->count() > 0)
+                                                <optgroup label="{{ $category->category_name }}">
+                                                    @foreach($category->sub_categories as $sub_category)
+                                                        <option value="{{ $sub_category->id }}" {{ old('category') == $sub_category->id ? 'selected': '' }}>{{ $sub_category->category_name }}</option>
+                                                    @endforeach
+                                                </optgroup>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                @php $country_usage = get_option('countries_usage'); @endphp
+                                @if($country_usage == 'all_countries')
+                                    <div class="form-group">
+                                        <select class="form-control select2" name="country">
+                                            <option value="">@lang('app.select_a_country')</option>
+                                            @foreach($countries as $country)
+                                                <option value="{{ $country->id }}" {{ request('country') == $country->id ? 'selected' :'' }}>{{ $country->country_name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                @endif
+
+                                <div class="form-group">
+                                    <select class="form-control select2" id="state_select" name="state">
+                                        <option value=""> @lang('app.select_state') </option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn theme-btn"> <i class="fa fa-search"></i> GO</button>
+                            </form>
+                        </div>
+
+                    </div>
+<!--			<div class="searchpanel">
+				<input type="text" placeholder="Search for an Investment Project, Buyer or Seller  (Company Name, Specialist...etc)">
+				<button type="button">SEARCH</button>
+			</div>-->
+
+			<div class="row margintop">
+				<div class="col-md-9">
+					<div class="tabpanel">
+						<div class="heading violet">
+							BIZZ   
+						</div>
+						<ul class="nav nav-tabs fullnavtablog">
+
+							<li class="active">
+								<a data-toggle="tab" href="#advertise">
+									Advertise
+								</a>
+							</li>
+							<li>
+								<a href="{{ route('contact_us_page') }}">
+									Connect
+								</a>
+							</li>
+                                                        <li>
+								<a href="{{ route('bizz') }}">
+									View 
+								</a>
+							</li>
+						</ul>
+						<div class="tab-content backnone">
+                                                     @if($bizz_ads->count() > 0)
+							<div id="advertise" class="tab-pane fade in active">
+								<div class="complogoprt">
+									<ul>
+                                                                              @foreach($bizz_ads as $ad)
+                                                                    
+										<li>
+                                                                                     <a href="{{  route('single_ad', [$ad->id, $ad->slug]) }}">
+							
+											<div class="compLogo">
+                                                                                            <img width="60" height="60" src="{{ media_url($ad->feature_img) }}">
+                                                                                                	<!--<img src="uploads/theme/sample-logo.jpg">-->
+                                                                                            
+                                                                                                
+											</div>          				<h3>{{ $ad->title }}</h3>
+                                                                                        
+											<h4>{{ $ad->city->city_name }}</h4>
+                                                                                          </a>
+										</li>
+                                                                             
+									 @endforeach
+									</ul>
+								</div>
+							</div>
+							<div id="connect" class="tab-pane fade">
+								Connect
+							</div>
+                                                       @endif
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="adprt">
+						<img src="uploads/theme/advertiseimg.jpg">
+						<div class="addesc">
+							<h3>Wrap, pack, bag & Protect</h3>
+							<button>Read more</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row margintop">
+				<div class="col-md-6">
+					<div class="tabpanel padnone">
+						<div class="heading blue">
+							Pro
+						</div>
+						<ul class="nav nav-tabs fullnavtablog">
+
+							<li class="active">
+								<a data-toggle="tab" href="#advertise2">
+									Advertise
+								</a>
+							</li>
+							<li>
+								<a href="{{ route('contact_us_page') }}">
+									Hire
+								</a>
+							</li>
+                                                        <li>
+								<a href="{{ route('pro') }}">
+									View
+								</a>
+							</li>
+						</ul>
+                                            <div class="tab-content">
+                                                                             @if($pro_ads->count() > 0)
+
+                       
+							<div id="advertise2" class="tab-pane fade in active">
+								<div class="maninto">
+                                                                     <ul>
+                        @foreach($pro_ads as $ad)
+									
+										<li>
+                                                                                      
+							
+											<div class="leftimgprt">
+                                                                                            <a href="{{  route('single_ad', [$ad->id, $ad->slug]) }}"> <img itemprop="image"  src="{{ media_url($ad->feature_img) }}" class="img-responsive"></a>
+                                                                                            
+											</div>
+											<div class="manintoinner">
+                                                                                             <a href="{{  route('single_ad', [$ad->id, $ad->slug]) }}">
+												<h3>{{ $ad->seller_name }}</h3>
+												<h4>{{ $ad->title }}</h4>
+												<h5>{{ $ad->city->city_name }}</h5>
+                                                                                             </a>
+											</div>
+                                                                                    
+										</li>
+										
+										
+									 @endforeach
+                        
+                        </ul>
+								</div>
+							</div>
+							<div id="hire" class="tab-pane fade">
+								Hire
+							</div>
+						</div>
+						
+                                                                                
+    @endif
+			
+					</div>
+
+				</div>
+                 
+				<div class="col-md-6">
+
+					<div class="tabpanel">
+						<div class="heading yellow">
+							Classfields
+						</div>
+						<ul class="nav nav-tabs fullnavtablog">
+
+							<li class="active">
+								<a data-toggle="tab" href="#free">
+									Advertise for free
+								</a>
+							</li>
+							<li>
+								<a  href="{{  route('classifieds') }}">
+									View
+								</a>
+							</li>
+						</ul>
+						<div class="tab-content padnone">
+							<div id="free" class="tab-pane fade in active">
+								<div class="advertiseList">
+                                                                                @if($classifieds_ads->count() > 0)
+                        <ul>
+                        @foreach($classifieds_ads as $ad)
+                    
+
+                                  
+                                    <li> 
+                                         <a href="{{  route('single_ad', [$ad->id, $ad->slug]) }}">
+                                 <h3>{{ $ad->title }}</h3> 
+                                 <p>{{ $ad->description }}</p>
+                                         </a>
+                                    </li>
+
+                        @endforeach
+                        
+                        </ul>
+    @endif
+									
+								</div>
+							</div>
+							<div id="View" class="tab-pane fade">
+								Hire
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row margintop">
+				<div class="col-md-9">
+					<div class="tabpanel">
+						<div class="heading green">
+							opportunities
+						</div>
+						<ul class="nav nav-tabs fullnavtablog">
+
+							<li class="active">
+								<a data-toggle="tab" href="#view1">
+									Post a project
+								</a>
+							</li>
+							<li>
+								<a  href="{{ route('opportunities') }}">
+									View
+								</a>
+							</li>
+						</ul>
+						<div class="tab-content padnonetwo">
+							<div id="project" class="tab-pane fade in active">
+								<div class="projectList">
+									            @if($opportunities_ads->count() > 0)
+                        <ul>
+                        @foreach($opportunities_ads as $ad)
+										<li>
+                                                                                     <a href="{{  route('single_ad', [$ad->id, $ad->slug]) }}">
+                                                                                     <h3>{{ $ad->title }}</h3> 
+                                 <p> <i class="fa fa-map-marker"></i> {{ $ad->city->city_name }}</p>
+                                                                                     </a>
+											
+											
+										</li>
+										
+										
+								
+                        @endforeach
+                        
+                        </ul>
+    @endif
+		
+								</div>
+							</div>
+							<div id="view2" class="tab-pane fade">
+								Hire
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+
+					<div class="housesevice">
+						<h2>In House Services</h2>
+						<div class="servicebox">
+						<ul>
+							<li>
+								<a href="page/business-valuation">  Business Valuation</a> 
+
+							</li>
+											<li>
+												<a href="page/deal-sourcing">
+												 Deal Sourcing
+											</a>
+											</li>
+											<li>
+											<a href="page/deal-structuring">
+												  Deal Structuring 
+											</a>
+											</li>
+											<li>
+											<a href="page/deals-execution">
+												 Deals Execution
+											</a>												
+											</li>
+											<li>
+											<a href="page/due-diligence">
+												  Due Diligence 
+											</a>
+											</li>
+											<li><a href="page/joint-ventures">
+												Joint Ventures
+											</a>
+											</li>
+											<li><a href="page/sensitivity-analysis">
+												  Sensitivity Analysis 
+											</li>
+											<li>
+											  <a href="page/sustainability-testing-and-analysis">
+												 Sustainability Testing and Analysis
+											</a>
+											</li>
+											<!--<li>
+												<img src="uploads/theme/icon9.png"> KYC & Credit Check 
+											</li>
+											<li>
+												<img src="uploads/theme/icon10.png"> Manpower Supply 
+											</li>
+											<li>
+												<img src="uploads/theme/icon11.png">  Multilingual Translation
+											</li> -->
+											
+										</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row margintop">
+				<div class="col-md-9">
+					<div class="tabpanel">
+						<div class="topheadingpanel" id="myDIV">
+							<a class="tabbutton active" id="btn1">Services</a>
+							<a class="tabbutton" id="btn2">Sector</a>
+						</div>
+
+						<div class="div1">
+							<ul class="nav nav-tabs fullnavtablog">
+
+								<li class="active">
+									<a data-toggle="tab" href="#package">
+										Packages
+									</a>
+								</li>
+								<li>
+									<a data-toggle="tab" href="#carte">
+											À LA CARTE
+									</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+								<div id="package" class="tab-pane fade in active">
+									<div class="packageiconprt">
+										<ul>
+											<li>
+												<a href="page/business-valuation"><img src="uploads/theme/icon1.png">  Business Valuation</a> 
+
+											</li>
+											<li>
+											<a href="page/deal-sourcing">
+												<img src="uploads/theme/icon2.png"> Deal Sourcing
+											</a>
+											</li>
+											<li>
+											<a href="page/deal-structuring">
+												<img src="uploads/theme/icon3.png">  Deal Structuring 
+											</a>
+											</li>
+											<li>
+											<a href="page/deals-execution">
+												<img src="uploads/theme/icon4.png"> Deals Execution
+											</a>												
+											</li>
+											<li>
+											<a href="page/due-diligence">
+												<img src="uploads/theme/icon5.png">  Due Diligence 
+											</a>
+											</li>
+											<li><a href="page/joint-ventures">
+												<img src="uploads/theme/icon6.png"> Joint Ventures
+											</a>
+											</li>
+											<li><a href="page/sensitivity-analysis">
+												<img src="uploads/theme/icon7.png">  Sensitivity Analysis 
+											</li>
+											<li>
+											  <a href="page/sustainability-testing-and-analysis">
+												<img src="uploads/theme/icon8.png"> Sustainability Testing and Analysis
+											</a>
+											</li>
+											<!--<li>
+												<img src="uploads/theme/icon9.png"> KYC & Credit Check 
+											</li>
+											<li>
+												<img src="uploads/theme/icon10.png"> Manpower Supply 
+											</li>
+											<li>
+												<img src="uploads/theme/icon11.png">  Multilingual Translation
+											</li> -->
+											
+										</ul>
+									</div>
+								</div>
+								<div id="carte" class="tab-pane fade">
+									services carte
+								</div>
+							</div>
+						</div>
+
+						<div class="div2">
+							<ul class="nav nav-tabs fullnavtablog">
+
+								<li class="active">
+									<a data-toggle="tab" href="#package2">
+										Packages
+									</a>
+								</li>
+								<li>
+									<a data-toggle="tab" href="#carte2">
+											À LA CARTE
+									</a>
+								</li>
+							</ul>
+							<div class="tab-content padnonetwo">
+								<div id="package2" class="tab-pane fade in active">
+									<div class="projectList">
+										sector package panel
+									</div>
+								</div>
+								<div id="carte2" class="tab-pane fade">
+									sector carte
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-md-3">
+
+					<div class="housesevice">
+						<h2>Outsource to us</h2>
+						<div class="servicebox">
+							<ul>
+							<li>
+								<a href="page/accounting">Accounting</a>
+							</li>
+							<li>
+								<a href="page/auditing">Auditing</a>
+							</li>
+							<li>
+								<a href="page/advertising">Advertising</a>
+							</li>
+							<li>
+								<a href="page/business-advisory">Business Advisory</a>
+							</li>
+							<li>
+								<a href="page/business-plan-writing">Business Plan Writing</a>
+							</li>
+							<li>
+								<a href="page/brand-consultancy">Brand Consultancy</a>
+							</li>
+							<li>
+								<a href="page/feasibility-studies">Feasibility Studies</a>
+							</li>
+							<li>
+								<a href="page/insurance">Insurance</a>
+							</li>
+							<li>
+								<a href="page/management-consultancy">Management Consultancy</a>
+							</li>
+							
+						</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row margintop">
+				<div class="col-md-9">
+					<div class="tabpanel">
+						<div class="heading pink">
+							Insights
+						</div>
+						<ul class="nav nav-tabs fullnavtablog">
+<li>
+								<a  href="{{ route('insight') }}">
+									View
+								</a>
+							</li>
+							<li>
+								<a  href="{{ route('contact_us_page') }}">
+									Post a white paper
+								</a>
+							</li>
+							<li class="active">
+								<a data-toggle="tab" href="#white">
+									Whitepaper
+								</a>
+							</li>
+							<li>
+								<a href="{{ route('blog') }}">
+									Blogs
+								</a>
+							</li>
+							<li>
+								<a href="{{ route('contact_us_page') }}">
+									Headline
+								</a>
+							</li>
+							<li>
+								<a href="{{ route('contact_us_page') }}">
+									Videos
+								</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div id="paper" class="tab-pane fade ">
+								<div class="twoprtimg">
+									<div class="leftimgsec">
+
+										<div class="topvideoprt">
+											<iframe width="100%" height="200" src="https://www.youtube.com/embed/S1oX9L6e6_Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+											 allowfullscreen></iframe>
+										</div>
+										<h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
+										<h5>103 views</h5>
+									</div>
+									<div class="rightimgsec">
+										<ul>
+											<li>
+												Lorem Ipsum is simply dummy text of the printing
+											</li>
+											<li>
+												Lorem Ipsum is simply dummy text of the printing
+											</li>
+											<li>
+												Lorem Ipsum is simply dummy text of the printing
+											</li>
+											<li>
+												Lorem Ipsum is simply dummy text of the printing
+											</li>
+											<li>
+												Lorem Ipsum is simply dummy text of the printing
+											</li>
+											<li>
+												Lorem Ipsum is simply dummy text of the printing
+											</li>
+
+											<li>
+												Lorem Ipsum is simply dummy text of the printing
+											</li>
+											<li>
+												Lorem Ipsum is simply dummy text of the printing
+											</li>
+											<li>
+												Lorem Ipsum is simply dummy text of the printing
+											</li>
+											<li>
+												Lorem Ipsum is simply dummy text of the printing
+											</li>
+											<li>
+												Lorem Ipsum is simply dummy text of the printing
+											</li>
+
+											<li>
+												Lorem Ipsum is simply dummy text of the printing
+											</li>
+										</ul>
+
+									</div>
+								</div>
+							</div>
+							<div id="white" class="tab-pane fade in active">
+												            @if($whitepapers_ads->count() > 0)
+                        <ul>
+                        @foreach($whitepapers_ads as $ad)
+										<li>
+                                                                                     <a href="{{  route('single_ad', [$ad->id, $ad->slug]) }}">
+                                                                                     <h3>{{ $ad->title }}</h3> 
+                                 <p>{{ $ad->description }}</p>
+                                                                                     </a>
+										</li>
+										
+										
+								
+                        @endforeach
+                        
+                        </ul>
+    @endif
+		
+							</div>
+							<div id="blogs" class="tab-pane fade">
+								blogs
+							</div>
+							<div id="headline" class="tab-pane fade">
+								headline
+							</div>
+							<div id="videos" class="tab-pane fade">
+								videos
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="housesevice">
+						<div class="topfollowheadprt">
+							<h3>Follow us on</h3>
+							<div class="rightsocial">
+								<ul>
+									<li>
+										<a>
+											<i class="fa fa-linkedin"></i>
+										</a>
+									</li>
+									<li>
+										<a>
+											<i class="fa fa-twitter"></i>
+										</a>
+									</li>
+									<li>
+										<a>
+											<i class="fa fa-instagram"></i>
+										</a>
+									</li>
+									<li>
+										<a>
+											<i class="fa fa-facebook"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="blogsection">
+							<div class="blognameprt">
+								<div class="leftnameblog">
+									-------
+									<span>
+										<h3>Magnas</h3>
+										<h4>engagement</h4>
+									</span>
+
+								</div>
+								<a>
+									<i class="fa fa-twitter"></i>
+								</a>
+							</div>
+
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+								dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+								book.
+							</p>
+
+							<div class="imgprt">
+								<img src="uploads/theme/blog-img.png">
+								<div class="downiminto">
+									<h3>Lorem Ipsum is simply dummy text</h3>
+									<p>October 20, 2019</p>
+								</div>
+							</div>
+
+							<div class="uploadprt">
+								<ul>
+										<li>
+												<a>
+													<img src="uploads/theme/like-con.png">
+												</a>
+											</li>
+									<li>
+										<a>
+											<img src="uploads/theme/boxlogin.png">
+										</a>
+									</li>
+								</ul>
+								<p>Oct 20, 2019</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="row margintop">
+				<div class="col-md-12">
+					<div class="tabpanel">
+						<div class="heading grey">
+							Endorsments
+						</div>
+						<ul class="nav nav-tabs fullnavtablog">
+
+							<li class="active">
+								<a data-toggle="tab" href="#earn">
+										ASSOCIATE & EARN
+								</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#partner">
+									Partners
+								</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#clients">
+									Clients
+								</a>
+							</li>
+
+						</ul>
+						<div class="tab-content backnone">
+							<div id="earn" class="tab-pane fade in active">
+								<div class="prtnerlogoprt">
+									<ul>
+										<li>
+											<img src="uploads/theme/partnerslogo.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo2.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo3.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo4.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo5.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo6.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo7.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo8.png">
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div id="partner" class="tab-pane fade">
+								<div class="prtnerlogoprt">
+									<ul>
+										<li>
+											<img src="uploads/theme/partnerslogo.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo2.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo3.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo4.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo5.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo6.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo7.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo8.png">
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div id="clients" class="tab-pane fade">
+							<div class="prtnerlogoprt">
+									<ul>
+										<li>
+											<img src="uploads/theme/partnerslogo.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo2.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo3.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo4.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo5.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo6.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo7.png">
+										</li>
+										<li>
+											<img src="uploads/theme/partnerslogo8.png">
+										</li>
+									</ul>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="clearfix"></div>
+
+
+
+	<div class="arrowup">
+		<a href="javascript:" id="return-to-top">
+			<i class="fa fa-angle-double-up"></i>
+		</a>
+	</div>
+
+
+
+@endsection
+
+@section('page-js')
+    <script src="{{ asset('assets/plugins/owl.carousel/owl.carousel.min.js') }}"></script>
+
+@endsection

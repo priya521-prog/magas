@@ -1,0 +1,375 @@
+.display-table {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.display-table > .vertical-align {
+    display: table-cell;
+    height: 100%;
+    width: 100%;
+}
+.display-table > .vertical-align.middle {
+    vertical-align: middle;
+}
+.display-table > .vertical-align.bottom {
+    vertical-align: bottom;
+}
+.form-tabs {
+    width: 600px;
+}
+.form-tabs ul li.each-form-tab{
+    width: auto;
+    display: inline-block;
+    float: left;
+    text-align: left;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.form-tabs ul li.each-form-tab + .each-form-tab {
+    margin-left: 50px;
+}
+.each-form-tab.active .circle{
+    background-color: #161a4f;
+}
+.each-form-tab.active .circle-title{
+    color: #161a4f;
+}
+.circle {
+    position: relative;
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-size: 19px;
+    line-height: 43px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    background-color: #cacacc;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    border-radius: 50%;
+}
+.circle-title {
+    font-size: 21px;
+    line-height: 35px;
+    color: #848486;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 5px;
+}
+.each-form-tab:hover .circle{
+    background-color: #161a4f;
+}
+.each-form-tab:hover .circle-title{
+    color: #161a4f;
+}
+.tab{
+    display: none;
+    margin-top: 60px;
+}
+.sign-up-content.tab{
+    display: block;
+}
+.form-text {
+    font-size: 15px;
+    line-height: 22px;
+    color: #080a2c;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 10px 5px;
+}
+.sign-up-form {
+    margin: 10px 0px 40px;
+    width: 75%;
+    font-size: 15px;
+    line-height: 21px;
+    color: #080a2c;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.sign-up-form .input-field {
+    width: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 0px!important;
+    border: 1px solid #d88dab;
+    text-transform: uppercase;
+    padding: 8px 8px;
+    width: 65%;
+}
+
+.sign-up-form .input-field::-webkit-input-placeholder {
+    color: #080a2c;
+}
+.sign-up-form .input-field::-moz-input-placeholder {
+    color: #080a2c;
+}
+.sign-up-form .input-field::-ms-input-placeholder {
+    color: #080a2c;
+}
+.sign-up-form .input-field::-webkit-input-placeholder {
+    color: #080a2c;
+}
+.sign-up-form .input-field::-moz-input-placeholder {
+    color: #080a2c;
+}
+.sign-up-form .input-field::-ms-input-placeholder {
+    color: #080a2c;
+}
+
+.sign-up-form .input-row + .input-row {
+    margin-top: 15px;
+}
+/* Reset Select */
+.sign-up-form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #fff;
+    background-image: none;
+}
+/* Remove IE arrow */
+.sign-up-form select::-ms-expand {
+    display: none;
+}
+/* Custom Select */
+.sign-up-form .select {
+    position: relative;
+    display: flex;
+    width: 65%;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 0em;
+    border: 1px solid #d88dab;
+}
+.sign-up-form select {
+    width: 100%;
+    text-transform: uppercase;
+    padding: 8px 8px;
+    cursor: pointer;
+}
+/* Arrow */
+.sign-up-form .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 6px;
+    right: 0;
+    padding: 0 1em;
+    background: #fff;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+    color: #f39c12;
+}
+.sign-up-form .input-row .text {
+    width: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 0px!important;
+    border: 1px solid #fff;
+
+    padding: 8px 8px;
+}
+.sign-up-form .input-row-border {
+    border: 2px solid #d1cfd0;
+    padding: 10px 1px;
+}
+.sign-up-form .input-row-border-none {
+    border: 0px solid #d1cfd0;
+    padding: 10px 1px;
+}
+.cc .checkbox-custom {
+    opacity: 0!important;
+    position: absolute!important;   
+}
+
+.cc .checkbox-custom, .cc .checkbox-custom-label {
+    display: inline-block!important;
+    vertical-align: middle!important;
+    margin: 5px;
+    cursor: pointer!important;
+    font-weight: normal;
+}
+.cc {float:left;}
+.cc {
+    margin-left: 10px;
+}
+.cc .checkbox-custom + .checkbox-custom-label:before {
+    content: '';
+    background: #fff!important;
+    border-radius: 0px;
+    border: 2px solid #c0c0c0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.cc .checkbox-custom:checked + .checkbox-custom-label:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 15px;
+    border: solid #161a4f;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    border-radius: 0px;
+    margin: 0px 15px 5px 5px;
+}
+.upgrade-to-premium {
+    margin-top: 140px;
+    font-size: 15px;
+    line-height: 22px;
+    color: #080a2c;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 10px 0px;
+}
+.custom-button {
+    font-size: 20px;
+    line-height: 32px;
+    background: #d33a70;
+    font-weight: 500;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 16px;
+    display: inline-block;
+}
+.custom-button:hover {
+    color: #fff;
+    background: #000;
+}
+.p-rate{
+    font-size: 45px;
+    line-height: 52px;
+    color: #d73970;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 40px 5px 10px;
+}
+.p-text{
+    font-size: 17px;
+    line-height: 27px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: none;
+    padding: 10px 5px 10px;
+}
+ul.p-list {
+    padding-left: 10px;
+    margin-top: 30px;
+}
+ul.p-list li{
+    font-size: 14px;
+    line-height: 25px;
+    text-align: left;
+    text-transform: none;
+    background: url('../images/icon-tick.png') no-repeat left 0px;
+    padding-left: 30px;
+}
+ul.p-list li span.bold{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+ul.p-list li span.text-pink{
+    color: #d73970;
+}
+.p-features {
+    margin: 40px 0 10px;
+}
+.p-features .feature{
+    margin: 40px 0 10px;
+    text-align: center;
+}
+.p-features .p-heading{
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 700;
+    color: #0a092e;
+    padding: 10px 2px 5px;
+}
+.p-features .p-desc{
+    font-size: 14px;
+    line-height: 20px;
+    color: #0a092e;
+    padding: 10px 2px 5px;
+}
+.p-features .p-rate{
+    font-size: 23px;
+    line-height: 33px;
+    padding: 10px 2px 5px;
+}
+.p-features .custom-button{
+    font-size: 13px;
+    line-height: 18px;
+    padding: 5px 20px;
+    background-color: #0a092e;
+}
+.p-features .custom-button:hover{
+    background-color: #d33a70;
+}
+@media (min-width: 1920px) and (max-width: 2520px) {
+
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .upgrade-to-premium {
+        margin-top: 14px;
+        text-align: center;
+    }
+}
+
+@media(max-width: 767px) {
+    .form-tabs {
+        width: 100%;
+    }
+    .form-tabs ul li.each-form-tab + .each-form-tab {
+        margin-left: 12px;
+    }
+    .tab {
+        display: none;
+        margin-top: 25px;
+    }
+    .sign-up-form,
+    .sign-up-form .input-field,
+    .sign-up-form .select {
+        width: 100%;
+    }
+    .upgrade-to-premium {
+        margin-top: 14px;
+        text-align: center;
+    }
+    .p-features .feature {
+        margin: 20px 0 10px;
+        text-align: center;
+    }
+}

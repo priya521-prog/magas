@@ -1,0 +1,1 @@
+You have received a feedback, please login to to your MAGAS account to view the same.<?php /**PATH /home/sermagas/public_html/resources/views/emails/feedback.blade.php ENDPATH**/ ?>

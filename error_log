@@ -1,0 +1,4 @@
+[05-Jun-2020 08:48:32 UTC] PHP Fatal error:  Can't use method return value in write context in /home/magas21/public_html/storage/framework/views/a3c0e1927e1928400af127cb9dd74ea1adf90cdc.php on line 279
+[05-Jun-2020 08:48:47 UTC] PHP Fatal error:  Can't use method return value in write context in /home/magas21/public_html/storage/framework/views/a3c0e1927e1928400af127cb9dd74ea1adf90cdc.php on line 279
+[05-Jun-2020 08:52:40 UTC] PHP Fatal error:  Can't use method return value in write context in /home/magas21/public_html/storage/framework/views/a3c0e1927e1928400af127cb9dd74ea1adf90cdc.php on line 281
+[05-Jun-2020 08:52:44 UTC] PHP Fatal error:  Can't use method return value in write context in /home/magas21/public_html/storage/framework/views/a3c0e1927e1928400af127cb9dd74ea1adf90cdc.php on line 281
